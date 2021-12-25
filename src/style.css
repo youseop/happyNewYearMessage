@@ -1,0 +1,34 @@
+@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css";
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.top {
+  all: unset;
+  display: scroll;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: rgb(197, 197, 197);
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+.APP {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.app-container {
+  margin: auto;
+  width: 400px;
+  background: rgb(184, 184, 184);
+  height: 100vh;
+}
