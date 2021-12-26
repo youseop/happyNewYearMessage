@@ -1,22 +1,26 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import FindFriends from "../routes/FindFriends";
 import Home from "../routes/Home";
 import SignIn from "../routes/SignIn";
 import SignUp from "../routes/SignUp";
 import UserPage from "../routes/UserPage";
 
-const AppRouter = () => {
+const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home userObj={userObj} />
         </Route>
         <Route exact path="/signin">
-          <SignIn />
+          <SignIn userObj={userObj} />
         </Route>
         <Route exact path="/signup">
-          <SignUp />
+          <SignUp userObj={userObj} />
+        </Route>
+        <Route exact path="/friend">
+          <FindFriends />
         </Route>
         <Route path="/user/:id" component={UserPage} />
       </Switch>

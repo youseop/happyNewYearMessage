@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { authService, dbService } from "../fbase";
+import "./SignUp.css";
 
-function SignUp() {
+function SignUp({ userObj }) {
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,15 +21,14 @@ function SignUp() {
       setPassword(value);
     } else if (name === "passwordCheck") {
       setPasswordCheck(value);
-    } else if (name === "nickName" && value.length < 20) {
+    } else if (name === "nickName" && value.length < 15) {
       setNickName(value);
     }
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (password !== passwordCheck) {
-      alert("동일한 비밀번호를 입력해주세요.");
+    if (passwordLengthCheck() || emailInputCheck() || passwordConfirmCheck()) {
       return;
     }
     try {
@@ -41,23 +41,25 @@ function SignUp() {
         uid: uid,
         displayName: nickName,
         createdAt: Date.now(),
+        email: email,
       });
       history.push(`/user/${uid}`);
     } catch (error) {
+      alert(error.message);
       setError(error.message);
     }
   };
 
-  const regEmail =
-    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   const emailInputCheck = () => {
-    if (!regEmail.test(email)) {
+    const regEmail =
+      /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+    if (email && !regEmail.test(email)) {
       return "invalid";
     }
   };
 
   const passwordLengthCheck = () => {
-    if (password.length < 6) {
+    if (password && password.length < 6) {
       return "invalid";
     }
   };
@@ -67,56 +69,79 @@ function SignUp() {
       return "invalid";
     }
   };
+  const onClickGoToHome = () => {
+    history.push("/");
+  };
+  const onClickGoBack = () => {
+    history.goBack();
+  };
 
   return (
-    <div>
-      signup
-      <form onSubmit={onSubmit}>
+    <div className="signup-container">
+      <div className="btn-container">
+        <button onClick={onClickGoToHome}>메인화면</button>
+        <button onClick={onClickGoBack}>뒤로</button>
+      </div>
+      <div className="signup-text">나의 행성 만들기</div>
+      <form className="signup-form" onSubmit={onSubmit}>
+        <span className="input-text">이름</span>
         <input
           name="nickName"
           type="text"
-          placeholder="nickName"
+          placeholder=""
           required
           value={nickName}
           onChange={onChange}
         />
+        <div className="warning-text"></div>
+        <span className="input-text">이메일</span>
         <input
           className={emailInputCheck()}
           name="email"
           type="text"
-          placeholder="Email"
+          placeholder=""
           required
           value={email}
           onChange={onChange}
         />
-        {email && emailInputCheck() && "올바른 이메일 형식을 입력해주세요."}
+        <div className="warning-text">
+          {email && emailInputCheck() && "올바른 이메일 형식을 입력해주세요."}
+          {/* Please enter a valid email format. */}
+        </div>
+        <span className="input-text">비밀번호</span>
         <input
           className={passwordLengthCheck()}
           name="password"
           type="password"
-          placeholder="Password"
+          placeholder=""
           required
           value={password}
           onChange={onChange}
         />
-        {password &&
-          passwordLengthCheck() &&
-          "비밀번호는 6자 이상 입력해주세요."}
+        <div className="warning-text">
+          {password &&
+            passwordLengthCheck() &&
+            "비밀번호는 6자 이상 입력해주세요."}
+          {/* Please enter a password of at least 6 characters. */}
+        </div>
+        <span className="input-text">비밀번호 확인</span>
         <input
           className={passwordConfirmCheck()}
           name="passwordCheck"
           type="password"
-          placeholder="PasswordCheck"
+          placeholder=""
           required
           value={passwordCheck}
           onChange={onChange}
         />
-        {password &&
-          passwordCheck &&
-          passwordConfirmCheck() &&
-          "동일한 비밀번호를 입력해주세요."}
-        <input type="submit" value="create account" />
-        {error}
+        <div className="warning-text">
+          {password &&
+            passwordCheck &&
+            passwordConfirmCheck() &&
+            "비밀번호와 일치하지 않습니다."}
+          {/* Please enter the same password. */}
+        </div>
+        <input className="main-button" type="submit" value="" />
       </form>
     </div>
   );

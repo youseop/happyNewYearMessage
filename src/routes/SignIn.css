@@ -1,0 +1,55 @@
+.signin-container {
+  background-color: #1a1a1a;
+  height: 640px;
+  width: 100%;
+  color: #00ff00;
+  text-align: center;
+  font-family: "DOSMyungjo";
+}
+
+.signin-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin-container .input-text {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 280px;
+}
+
+.signin-form input {
+  all: unset;
+  width: 285px;
+  height: 30px;
+  text-align: left;
+  padding: 3px;
+  padding-left: 10px;
+  border: #00ff00 solid 1px;
+  font-size: 20px;
+}
+
+input.invalid {
+  border: red solid 0.5px;
+}
+
+.signin-container .main-button {
+  all: unset;
+  height: 100px;
+  width: 200px;
+  background-image: url("../img/sign_in.png");
+  background-repeat: no-repeat;
+  background-size: 200px 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.signin-container .btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+}

@@ -1,52 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import { authService, dbService } from "../fbase";
-import HamburgerMenu from "./HamburgerMenu";
+import "./Home.css";
 
-const Home = () => {
-  const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userObj, setUserObj] = useState(null);
+const Home = ({ userObj }) => {
   const history = useHistory();
 
-  const compactUserInfo = (user) => {
-    return {
-      displayName: user.displayName,
-      uid: user.uid,
-      updateProfile: (args) => user.updateProfile(args),
-    };
-  };
-
-  useEffect(() => {
-    authService.onAuthStateChanged((user) => {
-      if (user) {
-        setIsLoggedIn(true);
-        setUserObj(compactUserInfo(user));
-      } else {
-        setIsLoggedIn(false);
-      }
-      setInit(true);
-    });
-  }, []);
-
   const onClickMakeBtn = () => {
-    if (!init) {
-      console.log("not yet initialized");
-      return;
-    }
+    history.push("signup");
+  };
+  const onClickGoToMyTree = () => {
     if (userObj) {
       history.push(`/user/${userObj.uid}`);
-      return;
+    } else {
+      history.push("signin");
     }
-    history.push("signup");
+  };
+  const onClickFindFriend = () => {
+    history.push("/friend");
   };
 
   return (
-    <div className="home-container">
-      <HamburgerMenu userObj={userObj} isLoggedIn={isLoggedIn} />
-      <span>새해 복 많이 받으세요</span>
-      <button onClick={onClickMakeBtn}>트리 만들기</button>
-    </div>
+    <>
+      <div className="home-container">
+        <img className="main-text" alt="" src="img/main-msg.png" />
+        <img className="main-img" alt="" src="img/main-icon.png" />
+        <div className="main-text-container">
+          2021년 힘든 한 해를 보낸 친구에게
+          <br />
+          따듯한 메세지를 남겨주세요.
+          <br />몇 광년 거리두기를 통해 안전하게 전달됩니다.
+        </div>
+      </div>
+      <div className="button-container">
+        <button className="main-button" onClick={onClickMakeBtn} />
+        <div className="mini-button-container">
+          <button className="mini-button" onClick={onClickGoToMyTree}>
+            내 행성으로
+          </button>
+          <button className="mini-button" onClick={onClickFindFriend}>
+            친구 찾기
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 export default Home;

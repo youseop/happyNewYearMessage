@@ -1,0 +1,59 @@
+.msg-star#display-star-0 {
+  color: #00ff00;
+}
+.msg-star#display-star-1 {
+  color: #00ffff;
+}
+.msg-star#display-star-2 {
+  color: #ffff00;
+}
+.msg-star#display-star-3 {
+  color: #ff00ff;
+}
+.msg-star#display-star-4 {
+  color: #ffffff;
+}
+
+.msg-star {
+  font-family: "YdestreetB";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.star-container {
+  height: 60px;
+}
+
+.msg-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.603);
+  z-index: 50;
+}
+
+.msg-container {
+  background-color: #1a1a1a;
+  margin: auto;
+  margin-top: 100px;
+  width: 300px;
+  height: 300px;
+  border: #00ff00 solid 1px;
+  padding: 10px;
+}
+
+.msg-nickname {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.msg-nickname span {
+  font-size: 25px;
+}
+.msg-text {
+  text-align: left;
+}

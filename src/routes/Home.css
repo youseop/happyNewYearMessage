@@ -1,0 +1,55 @@
+.home-container {
+  width: 100%;
+  font-family: "DOSMyungjo";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-text-container {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  transform: translateY(-10px);
+}
+
+.main-text {
+  width: 70%;
+  margin-top: 35px;
+}
+.main-img {
+  width: 35%;
+  margin-top: 60px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.main-button {
+  all: unset;
+  height: 90px;
+  width: 180px;
+  margin-top: 15px;
+  background-image: url("../img/make_planet.png");
+  background-repeat: no-repeat;
+  background-size: 180px 90px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mini-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 175px;
+  transform: translateY(-10px);
+}
+
+.mini-button {
+  font-family: "DOSMyungjo";
+  text-decoration: underline;
+  font-size: 15px;
+}
