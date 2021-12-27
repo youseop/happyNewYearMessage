@@ -4,6 +4,7 @@ import { authService, dbService } from "../fbase";
 import SendMsgModal from "./SendMsgModal";
 import MsgModal from "./MsgModal";
 import "./UserPage.css";
+import InduceModal from "./InduceModal";
 
 const UserPage = ({ match }) => {
   const [uid, setUid] = useState("");
@@ -11,6 +12,7 @@ const UserPage = ({ match }) => {
   const [sameUser, setSameUser] = useState(false);
   const [msgList, setMsgList] = useState([]);
   const [isMsgModalOpened, setIsMsgModalOpened] = useState(false);
+  const [isInduceModalOpened, setIsInduceModalOpened] = useState(false);
   const [displayMsgIndex, setDisplayMsgIndex] = useState(null);
   const history = useHistory();
 
@@ -101,6 +103,17 @@ const UserPage = ({ match }) => {
     setDisplayMsgIndex(null);
   };
   const url = document.location.href;
+
+  const showInduceModal = () => {
+    setIsInduceModalOpened(true);
+    localStorage.setItem("sawInduceModal", "true");
+  };
+
+  const closeInduceModal = () => {
+    console.log("set inducemodal open as false");
+    setIsInduceModalOpened(false);
+  };
+
   return (
     <div className="userpage-container">
       <div className="btn-container">
@@ -161,11 +174,19 @@ const UserPage = ({ match }) => {
         isMsgModalOpened={isMsgModalOpened}
         onClickToggleMsgModal={onClickToggleMsgModal}
         uid={uid}
+        showInduceModal={showInduceModal}
       />
       {displayMsgIndex !== null && (
         <MsgModal
           msgObj={msgList[displayMsgIndex]}
           closeMsgModal={closeMsgModal}
+          sameUser={sameUser}
+        />
+      )}
+      {isInduceModalOpened && (
+        <InduceModal
+          onClickSignUp={onClickSignUp}
+          closeInduceModal={closeInduceModal}
         />
       )}
       <img className="person-planet" alt="" src="img/main-icon.png" />

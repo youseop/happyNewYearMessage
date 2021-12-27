@@ -25,7 +25,7 @@
 }
 
 .person-planet {
-  width: 20%;
+  width: 80px;
   margin-top: 45px;
   position: absolute;
   transform: translate(calc(50vw - 50%), calc(230px - 50%));
@@ -78,6 +78,7 @@
   background-size: 210px 60px;
   text-align: center;
   cursor: pointer;
+  z-index: 11;
 }
 .copy-url-button {
   all: unset;

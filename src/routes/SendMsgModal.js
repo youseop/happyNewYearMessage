@@ -8,6 +8,7 @@ const MsgModal = ({
   onClickToggleMsgModal,
   uid,
   addMsgOnList,
+  showInduceModal,
 }) => {
   const [nickName, setNickName] = useState("");
   const [msgText, setMsgText] = useState("");
@@ -33,6 +34,10 @@ const MsgModal = ({
     setNickName("");
     addMsgOnList(msgObj);
     onClickToggleMsgModal();
+    const isUserSawInduceModal = localStorage.getItem("sawInduceModal");
+    if (isUserSawInduceModal !== "true") {
+      showInduceModal();
+    }
   };
   const onChangeMsgText = (e) => {
     const {
@@ -58,7 +63,6 @@ const MsgModal = ({
   return (
     <div
       className={`msgmodal-wrapper ${isMsgModalOpened ? "opened" : "closed"}`}
-      onClick={onClickToggleMsgModal}
     >
       <div
         className="msgmodal-container"

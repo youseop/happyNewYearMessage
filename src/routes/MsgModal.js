@@ -1,7 +1,7 @@
 import React from "react";
 import "./MsgModal.css";
 
-const MsgModal = ({ msgObj, closeMsgModal }) => {
+const MsgModal = ({ msgObj, closeMsgModal, sameUser }) => {
   const { photo, text, nickName } = msgObj;
   const getStarSize = (msgText) => {
     return `${Math.min(50, msgText.length) + 20}px`;
@@ -28,9 +28,8 @@ const MsgModal = ({ msgObj, closeMsgModal }) => {
           보낸사람: <span>{nickName}</span>
         </div>
         <div className="msg-text">
-          {date.getFullYear() > 2021
-            ? text
-            : "내용은 2022년에 확인할 수 있습니다."}
+          {/* {sameUser */}
+          {date.getFullYear() > 2021 ? text : "메세지는 2022년에 전달됩니다."}
         </div>
       </div>
     </div>

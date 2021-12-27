@@ -56,4 +56,5 @@
 }
 .msg-text {
   text-align: left;
+  word-break: break-all;
 }
