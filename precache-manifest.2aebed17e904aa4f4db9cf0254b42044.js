@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f60f215b29ced3d79b92",
+    "revision": "22b1b1295b22e8ef0b7f",
     "url": "2022message.com/static/css/main.2471d7b3.chunk.css"
   },
   {
-    "revision": "f60f215b29ced3d79b92",
-    "url": "2022message.com/static/js/main.ed6e408b.chunk.js"
+    "revision": "22b1b1295b22e8ef0b7f",
+    "url": "2022message.com/static/js/main.121aa27c.chunk.js"
   },
   {
     "revision": "95c8e71d5775efcfbd46",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "2022message.com/static/media/DOSMyungjo.0a9eca91.ttf"
   },
   {
-    "revision": "37c1663a4c3216589e5c93fbc77a21d1",
+    "revision": "a4a97b259062cee6987f8026afa2bded",
     "url": "2022message.com/index.html"
   }
 ];
