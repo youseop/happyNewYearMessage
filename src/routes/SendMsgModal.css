@@ -1,7 +1,7 @@
 .msgmodal-wrapper {
   background-color: rgba(146, 255, 161, 0.226);
   width: 400px;
-  height: 100vh;
+  height: 640px;
   position: absolute;
   transform: translateX(calc(50vw - 50%));
   top: 0;
@@ -16,7 +16,7 @@
 .msgmodal-container {
   margin: auto;
   width: 400px;
-  height: 100vh;
+  height: 640px;
   background-color: #1a1a1a;
 }
 .msg-form {

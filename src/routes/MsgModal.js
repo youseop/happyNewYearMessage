@@ -29,7 +29,7 @@ const MsgModal = ({ msgObj, closeMsgModal, sameUser }) => {
         </div>
         <div className="msg-text">
           {/* {sameUser */}
-          {date.getFullYear() > 2021 ? text : "메세지는 2022년에 전달됩니다."}
+          {date.getFullYear() &&sameUser > 2021 ? text : "메세지는 2022년에 전달됩니다."}
         </div>
       </div>
     </div>
