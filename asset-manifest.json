@@ -1,14 +1,14 @@
 {
-  "main.css": "2022message.com/static/css/main.4db599d6.chunk.css",
-  "main.js": "2022message.com/static/js/main.86f92203.chunk.js",
-  "main.js.map": "2022message.com/static/js/main.86f92203.chunk.js.map",
-  "runtime~main.js": "2022message.com/static/js/runtime~main.27bb5798.js",
-  "runtime~main.js.map": "2022message.com/static/js/runtime~main.27bb5798.js.map",
-  "static/js/2.cc54a0dc.chunk.js": "2022message.com/static/js/2.cc54a0dc.chunk.js",
-  "static/js/2.cc54a0dc.chunk.js.map": "2022message.com/static/js/2.cc54a0dc.chunk.js.map",
-  "index.html": "2022message.com/index.html",
-  "precache-manifest.dbdbf1d5d62e5da23c953584bba240d6.js": "2022message.com/precache-manifest.dbdbf1d5d62e5da23c953584bba240d6.js",
-  "service-worker.js": "2022message.com/service-worker.js",
-  "static/css/main.4db599d6.chunk.css.map": "2022message.com/static/css/main.4db599d6.chunk.css.map",
-  "static/media/style.css": "2022message.com/static/media/YdestreetL.fc54496d.ttf"
+  "main.css": "/static/css/main.9d46d426.chunk.css",
+  "main.js": "/static/js/main.86f92203.chunk.js",
+  "main.js.map": "/static/js/main.86f92203.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/js/2.3e8afc38.chunk.js": "/static/js/2.3e8afc38.chunk.js",
+  "static/js/2.3e8afc38.chunk.js.map": "/static/js/2.3e8afc38.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.e99102d9a72b0d077c99482e3c977371.js": "/precache-manifest.e99102d9a72b0d077c99482e3c977371.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.9d46d426.chunk.css.map": "/static/css/main.9d46d426.chunk.css.map",
+  "static/media/style.css": "/static/media/YdestreetL.fc54496d.ttf"
 }
