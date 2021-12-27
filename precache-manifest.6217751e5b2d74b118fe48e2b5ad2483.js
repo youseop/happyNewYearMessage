@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b84d14405e8ba9882593",
-    "url": "/happyNewYearMessage/static/css/main.1835c12d.chunk.css"
+    "revision": "54169b8b667b5ffdfa43",
+    "url": "/happyNewYearMessage/static/css/main.faea87bb.chunk.css"
   },
   {
-    "revision": "b84d14405e8ba9882593",
-    "url": "/happyNewYearMessage/static/js/main.53e02ebe.chunk.js"
+    "revision": "54169b8b667b5ffdfa43",
+    "url": "/happyNewYearMessage/static/js/main.b1d23579.chunk.js"
   },
   {
     "revision": "ceec8df3b53e0cae1644",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/happyNewYearMessage/static/media/DOSMyungjo.0a9eca91.ttf"
   },
   {
-    "revision": "227d33da747fd1d26d73b03e0b325300",
+    "revision": "93550d71777e1b721321c849a745c71b",
     "url": "/happyNewYearMessage/index.html"
   }
 ];
