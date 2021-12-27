@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/happyNewYearMessage/precache-manifest.7c1633b9d471f3be702c7f5596c391a2.js"
+  "2022message.com/precache-manifest.df3eafc4228ad5a6bababf65b57b83e4.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/happyNewYearMessage/index.html", {
+workbox.routing.registerNavigationRoute("2022message.com/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
