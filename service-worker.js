@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/happyNewYearMessage/precache-manifest.8d330216e1224a17bc3aa529bd5014da.js"
+  "/happyNewYearMessage/precache-manifest.7c1633b9d471f3be702c7f5596c391a2.js"
 );
 
 workbox.clientsClaim();

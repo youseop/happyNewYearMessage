@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/happyNewYearMessage/static/media/DOSMyungjo.0a9eca91.ttf"
   },
   {
-    "revision": "aa00c0f70afe0d7942d3a81c48684374",
+    "revision": "33df621ab343b18801a4eb23fdd4df8a",
     "url": "/happyNewYearMessage/index.html"
   }
 ];
