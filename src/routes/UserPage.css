@@ -36,21 +36,26 @@
 
 .star-display-container .display-star {
   font-family: "YdestreetB";
-  height: 25px;
+  height: 28px;
   display: flex;
   align-items: center;
   z-index: 4;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  display: flex;
+  align-items: center;
 }
 
 .star-display-container .display-star .star {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 5px;
-  margin-top: 20px;
+  height: 28px;
+  padding-top: 28px;
   z-index: 4;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .display-star#display-star-0 {

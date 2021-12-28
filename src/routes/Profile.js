@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { authService, dbService } from "../fbase";
 
 const Profile = ({ userObj, refreshUser, match }) => {
-  console.log("match: ", match);
   const uid = "uid2";
   const history = useHistory();
   const onLogOutClick = () => {

@@ -93,7 +93,7 @@ const UserPage = ({ match }) => {
     document.execCommand("copy");
     textarea.setSelectionRange(0, 0);
 
-    // await navigator.clipboard.writeText(link);
+    await navigator.clipboard.writeText(url);
     alert(
       "링크가 복사되었습니다. \nSNS를 통해 친구들에게 링크를 공유해주세요."
     );
@@ -110,69 +110,68 @@ const UserPage = ({ match }) => {
   };
 
   const closeInduceModal = () => {
-    console.log("set inducemodal open as false");
     setIsInduceModalOpened(false);
   };
 
   return (
     <div className="userpage-container">
-      { !isMsgModalOpened &&
-      <>
-        <div className="btn-container">
-          <button onClick={onClickGoToHome}>메인화면</button>
-          <button onClick={onClickGoBack}>뒤로</button>
-        </div>
-        <div className="star-display-container">
-          {msgList.map((msg, index) => {
-            const { createdAt, photo, text, posX, posY } = msg;
-            return (
-              <div
-                className="display-star"
-                key={createdAt}
-                id={`display-star-${photo}`}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: "50vw",
-                  transform: `translate(${posX}px,${posY}px)`,
-                }}
-              >
+      {!isMsgModalOpened && (
+        <>
+          <div className="btn-container">
+            <button onClick={onClickGoToHome}>메인화면</button>
+            <button onClick={onClickGoBack}>뒤로</button>
+          </div>
+          <div className="star-display-container">
+            {msgList.map((msg, index) => {
+              const { createdAt, photo, text, posX, posY } = msg;
+              return (
                 <div
-                  className="star"
+                  className="display-star"
+                  key={createdAt}
+                  id={`display-star-${photo}`}
                   style={{
-                    fontSize: `${getStarSize(text)}`,
+                    transform: `translate(${posX}px,${posY}px)`,
                   }}
-                  onClick={onClickShowMsg.bind(null, index)}
                 >
-                  *
+                  <div
+                    className="star"
+                    id={index}
+                    style={{
+                      fontSize: `${getStarSize(text)}`,
+                    }}
+                    onClick={() => {
+                      onClickShowMsg(index);
+                    }}
+                  >
+                    *
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-        <div>
-          {displayName}님 행성에 {msgList.length}개의 메세지가 도착했습니다.
-        </div>
-        <div className="userpage-btn-container">
-          {sameUser ? (
-            <>
-              <button className="copy-url-button" onClick={onCopyUrl} />
-              <button onClick={onLogOutClick}>log out</button>
-            </>
-          ) : (
-            <>
-              <button
-                className="send-msg-button"
-                onClick={onClickToggleMsgModal}
-              />
-              <button className="mini-button" onClick={onClickSignUp}>
-                내 행성 만들기
-              </button>
-            </>
-          )}
-        </div>
-      </>
-      }
+              );
+            })}
+          </div>
+          <div>
+            {displayName}님 행성에 {msgList.length}개의 메세지가 도착했습니다.
+          </div>
+          <div className="userpage-btn-container">
+            {sameUser ? (
+              <>
+                <button className="copy-url-button" onClick={onCopyUrl} />
+                <button onClick={onLogOutClick}>log out</button>
+              </>
+            ) : (
+              <>
+                <button
+                  className="send-msg-button"
+                  onClick={onClickToggleMsgModal}
+                />
+                <button className="mini-button" onClick={onClickSignUp}>
+                  내 행성 만들기
+                </button>
+              </>
+            )}
+          </div>
+        </>
+      )}
       <SendMsgModal
         addMsgOnList={addMsgOnList}
         isMsgModalOpened={isMsgModalOpened}
