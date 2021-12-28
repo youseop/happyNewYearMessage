@@ -73,7 +73,7 @@ const UserPage = ({ match }) => {
     setIsMsgModalOpened((prev) => !prev);
   };
   const getStarSize = (msgText) => {
-    return `${Math.min(50, msgText.length) + 10}px`;
+    return `${Math.min(50, msgText.length / 2) + 10}px`;
   };
 
   const onClickShowMsg = (index) => {

@@ -25,8 +25,8 @@ const MsgModal = ({
       nickName: nickName,
       text: msgText,
       photo: selectedStarIndex,
-      posX: 36 * Math.floor(Math.random() * 11) - 200,
-      posY: 45 * Math.floor(Math.random() * 11) + 50,
+      posX: 18 * Math.floor(Math.random() * 21) - 200,
+      posY: 22 * Math.floor(Math.random() * 21) + 50,
       createdAt: Date.now(),
     };
     await dbService.collection("message").add(msgObj);
@@ -57,7 +57,7 @@ const MsgModal = ({
   };
 
   const getStarSize = () => {
-    return `${Math.min(75, msgText.length + 25)}px`;
+    return `${Math.min(75, msgText.length / 2 + 15)}px`;
   };
 
   return (
