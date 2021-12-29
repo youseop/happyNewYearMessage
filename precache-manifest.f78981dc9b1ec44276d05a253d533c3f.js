@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/static/media/DOSMyungjo.0a9eca91.ttf"
   },
   {
-    "revision": "4f574d6c3081a49bf5090edf6cafd1c8",
+    "revision": "63ba9427f6ccb29f67982888c9d30118",
     "url": "/index.html"
   }
 ];
