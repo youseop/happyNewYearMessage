@@ -66,7 +66,6 @@ const UserMsgPage = ({ match }) => {
   const closeMsgModal = () => {
     setDisplayMsgIndex(null);
   };
-  console.log(displayMsgIndex);
   return (
     <div className="usermsg-container">
       <div className="btn-container">
