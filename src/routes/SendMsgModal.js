@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { dbService } from "../fbase";
 import "./SendMsgModal.css";
 
-const MsgModal = ({
+const SendMsgModal = ({
   isMsgModalOpened,
   onClickToggleMsgModal,
   uid,
@@ -134,4 +134,4 @@ const MsgModal = ({
   );
 };
 
-export default MsgModal;
+export default SendMsgModal;

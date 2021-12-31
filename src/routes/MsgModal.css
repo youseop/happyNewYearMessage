@@ -58,3 +58,7 @@
   text-align: left;
   word-break: break-all;
 }
+
+.msg-wrapper .mini-button {
+  margin-top: 20px;
+}
